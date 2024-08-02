@@ -146,6 +146,9 @@ namespace Application.Appointment
 
                 appointment.Doctor = await _doctorRepository.Get(request.Data.DoctorId);
 
+                if (request.Data.PatientId == null || request.Data.PatientId == 0)
+                    appointment.Patient = null;
+
                 await appointment.Save(_appointmentRepository);
                 request.Data.Id = appointment.Id;
 
