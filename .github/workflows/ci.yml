@@ -1,0 +1,39 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  container-job:
+
+    runs-on: ubuntu-latest
+
+    services:
+      sql.data:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: Vu#8L2%jA&9f
+        ports:
+          - "1433:1433"
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore ./AppointmentScheduling.sln
+    - name: Build
+      run: dotnet build ./AppointmentScheduling.sln --no-restore
+    - name: Test
+      env:
+        TESTING: Y
+      run: dotnet test ./AppointmentScheduling.sln --no-build --verbosity normal

@@ -1,0 +1,12 @@
+﻿apiVersion: v1
+kind: Pod
+metadata:
+    name: appointmentschedulingpod
+    labels:
+        app: appointmentschedulingpod
+spec:
+    containers:
+    - name: appointmentschedulingpod
+      image: iderley/appointmentschedulingapi:latest
+      ports:
+      - containerPort: 80

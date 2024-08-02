@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Doctor\Exceptions\" />
+    <Folder Include="Patient\Enums\" />
+    <Folder Include="Patient\Exceptions\" />
+    <Folder Include="Patient\ValueObjects\" />
+    <Folder Include="Doctor\Enums\" />
+    <Folder Include="Doctor\ValueObjects\" />
+    <Folder Include="User\ValueObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.2" />
+  </ItemGroup>
+
+</Project>
