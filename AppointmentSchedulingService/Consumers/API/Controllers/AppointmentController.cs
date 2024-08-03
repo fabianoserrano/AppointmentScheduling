@@ -4,6 +4,7 @@ using Application.Appointment.Ports;
 using Application.Appointment.Requests;
 using Application.Email.Ports;
 using Application.Email.Requests;
+using Domain.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +29,7 @@ namespace API.Controllers
             _emailManager = emailManager;
         }
 
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         [HttpPost]
         public async Task<ActionResult<CreateAppointmentDto>> Post(CreateAppointmentDto appointment)
         {
@@ -69,7 +70,7 @@ namespace API.Controllers
             return NotFound(res);
         }
 
-        //[Authorize("Bearer", Roles = Roles.Patient)]
+        [Authorize("Bearer", Roles = Roles.Patient)]
         [HttpGet]
         [Route("GetAvailableAppointments")]
         public async Task<ActionResult<AvailableAppointmentDto>> GetAvailableAppointments(int doctorId)
@@ -107,7 +108,7 @@ namespace API.Controllers
             return BadRequest(500);
         }
 
-        //[Authorize("Bearer", Roles = Roles.Patient)]
+        [Authorize("Bearer", Roles = Roles.Patient)]
         [HttpPut]
         [Route("ScheduleAppointment")]
         public async Task<ActionResult<ScheduleAppointmentDto>> ScheduleAppointment(ScheduleAppointmentDto appointment)
