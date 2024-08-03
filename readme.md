@@ -1,13 +1,3 @@
----
-title: Hackathon - MedAppointments
-
----
-
----
-title: Hackathon - MedAppointments
-
----
-
 # Sistema de Agendamento de Consultas Médicas - Health&Med
 
 É uma aplicação .NET que simula um Sistema de Agendamento de Consultas Médicas, permitindo que os pacientes possam verificar os médicos disponíveis e agendar uma consulta em um horário disponível no sistema. A solução foi desenvolvida utilizando a linguagem de programação C# na versão 6.0 do .NET e banco de dados SQL Server com publicação dentro de um cluster Kubernets e testes sendo executados via pipeline no GitHub Actions.
@@ -175,7 +165,7 @@ Update-Database
 ````
 **Diagrama do Banco de Dados:**
 
-![Untitled](https://hackmd.io/_uploads/r1VHpWotA.png)
+[![Untitled](https://hackmd.io/_uploads/r1VHpWotA.png)](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_afdfa0846341acc6781c5e52bd034eff.jpg?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1722650507&Signature=FnN382ABSp29I39mQ320cPhTsFU%3D)
 
 
 ## Diagramas
